@@ -1,0 +1,47 @@
+Last login: Tue Sep 28 14:37:38 on ttys000
+(base) qmr@qumingruodeMacBook-Pro ~ % cd /Users/qmr/Desktop/cmu_semester1/cloud
+(base) qmr@qumingruodeMacBook-Pro cloud % docker build -t mingruoqu/python . 
+[+] Building 2.1s (9/9) FINISHED                                                
+ => [internal] load build definition from Dockerfile                       0.1s
+ => => transferring dockerfile: 369B                                       0.0s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [internal] load metadata for docker.io/library/python:latest           1.5s
+ => [auth] library/python:pull token for registry-1.docker.io              0.0s
+ => [internal] load build context                                          0.0s
+ => => transferring context: 811B                                          0.0s
+ => [1/3] FROM docker.io/library/python:latest@sha256:9064817e6e2c6fad092  0.0s
+ => CACHED [2/3] COPY . /usr/src/myapp                                     0.0s
+ => CACHED [3/3] WORKDIR /usr/src/myapp                                    0.0s
+ => exporting to image                                                     0.1s
+ => => exporting layers                                                    0.0s
+ => => writing image sha256:3d100132a98ce7d90294811254e79a6a5d270856299c7  0.0s
+ => => naming to docker.io/mingruoqu/python                                0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+(base) qmr@qumingruodeMacBook-Pro cloud % docker images
+REPOSITORY                           TAG       IMAGE ID       CREATED          SIZE
+dockerhubid/imagename                latest    3d100132a98c   25 minutes ago   862MB
+mingruoqu/python                     latest    3d100132a98c   25 minutes ago   862MB
+<none>                               <none>    d6548f4441db   29 hours ago     862MB
+<none>                               <none>    a3445e22a20f   29 hours ago     862MB
+postgres                             latest    588250b21688   4 days ago       353MB
+postgres                             <none>    bc5d09b9811d   3 weeks ago      300MB
+docker/getting-started               latest    613921574f76   3 months ago     26.7MB
+mcr.microsoft.com/mmlspark/release   latest    015f87568562   12 months ago    2.57GB
+(base) qmr@qumingruodeMacBook-Pro cloud % docker push mingruoqu/python
+Using default tag: latest
+The push refers to repository [docker.io/mingruoqu/python]
+5f70bf18a086: Pushed 
+ea1d39197ec2: Pushed 
+bbf761a04549: Pushed 
+93b3c12c0125: Pushed 
+d541af56cfe7: Pushed 
+575e01ca8515: Pushed 
+9f9e60b43302: Pushed 
+cc192ddba020: Pushed 
+7a8b78b91cf6: Pushed 
+d9f2737ff9a0: Pushed 
+5eeca25534bd: Pushed 
+latest: digest: sha256:daf485158847cc395339d9274189fbcdda947be66f10411ecd6096e73d82950b size: 2631
+(base) qmr@qumingruodeMacBook-Pro cloud % 
