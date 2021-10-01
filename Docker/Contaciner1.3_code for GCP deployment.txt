@@ -1,0 +1,97 @@
+Use “gcloud config set project [PROJECT_ID]” to change to a different project.
+mingruoqu123@cloudshell:~ (propane-crawler-327517)$ docker pull mingruoqu/python4
+Using default tag: latest
+latest: Pulling from mingruoqu/python4
+df5590a8898b: Pull complete
+705bb4cb554e: Pull complete
+519df5fceacd: Pull complete
+ccc287cbeddc: Pull complete
+e3f8e6af58ed: Pull complete
+aebed27b2d86: Pull complete
+cbad01103bfe: Pull complete
+70d3792d870b: Pull complete
+98d95f720735: Pull complete
+2451ac4151dd: Pull complete
+Digest: sha256:b04694929683f30780b2ac873a0a2166b64cf9e0100ae2101088c12db9eac29e
+Status: Downloaded newer image for mingruoqu/python4:latest
+docker.io/mingruoqu/python4:latest
+mingruoqu123@cloudshell:~ (propane-crawler-327517)$ docker tag mingruoqu/python4 gcr.io/propane-crawler-327517/mingruoqu/python4:version                                             
+mingruoqu123@cloudshell:~ (propane-crawler-327517)$ docker push gcr.io/propane-crawler-327517/mingruoqu/python4:version
+The push refers to repository [gcr.io/propane-crawler-327517/mingruoqu/python4]
+2183ce6f8fc0: Pushed
+677ae7c21c01: Layer already exists
+ec43cabdaa8e: Layer already exists
+4907938bbac8: Layer already exists
+c1792902851c: Layer already exists
+c272c95c3fb0: Layer already exists
+3054497613e6: Layer already exists
+d35dc7f4c79e: Layer already exists
+dabfe5b2ea81: Layer already exists
+5e6a409f30b6: Layer already exists
+version: digest: sha256:42e2c180c7a5177e77b5888dc843f1f8b39916116d15f8ad0a848106cb887cfb size: 2425
+mingruoqu123@cloudshell:~ (propane-crawler-327517)$ docker run gcr.io/propane-crawler-327517/mingruoqu/python4:version
+Hello World
+mingruoqu123@cloudshell:~ (propane-crawler-327517)$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+705bb4cb554e: Pull complete
+519df5fceacd: Pull complete
+ccc287cbeddc: Pull complete
+e3f8e6af58ed: Pull complete
+aebed27b2d86: Pull complete
+cbad01103bfe: Pull complete
+70d3792d870b: Pull complete
+98d95f720735: Pull complete
+2451ac4151dd: Pull complete
+Digest: sha256:b04694929683f30780b2ac873a0a2166b64cf9e0100ae2101088c12db9eac29e
+Status: Downloaded newer image for mingruoqu/python4:latest
+docker.io/mingruoqu/python4:latest
+mingruoqu123@cloudshell:~ (propane-crawler-327517)$ docker tag mingruoqu/python4 gcr.io/propane-crawler-327517/mingruoqu/python4:version                                             
+mingruoqu123@cloudshell:~ (propane-crawler-327517)$ docker push gcr.io/propane-crawler-327517/mingruoqu/python4:version
+The push refers to repository [gcr.io/propane-crawler-327517/mingruoqu/python4]
+2183ce6f8fc0: Pushed
+677ae7c21c01: Layer already exists
+ec43cabdaa8e: Layer already exists
+4907938bbac8: Layer already exists
+c1792902851c: Layer already exists
+c272c95c3fb0: Layer already exists
+3054497613e6: Layer already exists
+d35dc7f4c79e: Layer already exists
+dabfe5b2ea81: Layer already exists
+5e6a409f30b6: Layer already exists
+version: digest: sha256:42e2c180c7a5177e77b5888dc843f1f8b39916116d15f8ad0a848106cb887cfb size: 2425
+mingruoqu123@cloudshell:~ (propane-crawler-327517)$ docker run gcr.io/propane-crawler-327517/mingruoqu/python4:version
+Hello World
+mingruoqu123@cloudshell:~ (propane-crawler-327517)$
