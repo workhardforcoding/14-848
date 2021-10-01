@@ -1,0 +1,196 @@
+Last login: Fri Oct  1 15:41:53 on ttys000
+(base) qmr@ip-10-0-101-189 ~ % cd /Users/qmr/Desktop/cmu_semester1/cloud
+(base) qmr@ip-10-0-101-189 cloud % docker buildx ls
+NAME/NODE            DRIVER/ENDPOINT             STATUS   PLATFORMS
+festive_black *      docker-container                     
+  festive_black0     unix:///var/run/docker.sock inactive 
+vibrant_northcutt    docker-container                     
+  vibrant_northcutt0 unix:///var/run/docker.sock running  linux/arm64, linux/amd64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/mips64le, linux/mips64, linux/arm/v7, linux/arm/v6
+desktop-linux        docker                               
+  desktop-linux      desktop-linux               running  linux/arm64, linux/amd64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/arm/v7, linux/arm/v6
+default              docker                               
+  default            default                     running  linux/arm64, linux/amd64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/arm/v7, linux/arm/v6
+(base) qmr@ip-10-0-101-189 cloud % docker buildx build --platform linux/amd64,linux/arm64 --push -t mingruoqu2/python3 .
+[+] Building 555.3s (20/20) FINISHED                                            
+ => [internal] booting buildkit                                            3.2s
+ => => pulling image moby/buildkit:buildx-stable-1                         1.5s
+ => => creating container buildx_buildkit_festive_black0                   1.7s
+ => [internal] load build definition from Dockerfile                       1.2s
+ => => transferring dockerfile: 459B                                       0.0s
+ => [internal] load .dockerignore                                          1.3s
+ => => transferring context: 2B                                            0.0s
+ => [linux/arm64 internal] load metadata for docker.io/library/python:lat  4.4s
+ => [linux/amd64 internal] load metadata for docker.io/library/python:lat  4.1s
+ => [auth] library/python:pull token for registry-1.docker.io              0.0s
+ => [auth] library/python:pull token for registry-1.docker.io              0.0s
+ => [linux/amd64 1/3] FROM docker.io/library/python:latest@sha256:6b726  505.6s
+ => => resolve docker.io/library/python:latest@sha256:6b72626e02dd22ca535  0.6s
+ => => sha256:98d95f7207351c7573b8aebb6841495266a123a90ef 2.35MB / 2.35MB  2.6s
+ => => sha256:70d3792d870b650d7685514604e42116e8b0db8f50748fe 234B / 234B  0.2s
+ => => sha256:cbad01103bfec4ba3b741a15d906b2e36de89ca8b 17.70MB / 17.70MB  4.3s
+ => => sha256:e3f8e6af58ed3a502f0c3c15dce636d9d362a 196.45MB / 196.45MB  123.5s
+ => => sha256:aebed27b2d86a5a3a2cbe186247911047a7e432b9d1 6.29MB / 6.29MB  1.6s
+ => => sha256:519df5fceacdeaadeec563397b1d9f4d7c29c9f6e 10.87MB / 10.87MB  2.2s
+ => => sha256:ccc287cbeddc96a0772397ca00ec85482a7b7f9a 54.57MB / 54.57MB  16.2s
+ => => sha256:705bb4cb554eb7751fd21a994f6f32aee582fbe5ea 5.15MB / 5.15MB  20.8s
+ => => sha256:df5590a8898bedd76f02205dc8caa5cc9863267d 54.93MB / 54.93MB  23.5s
+ => => extracting sha256:df5590a8898bedd76f02205dc8caa5cc9863267dbcd8aac0  1.6s
+ => => extracting sha256:705bb4cb554eb7751fd21a994f6f32aee582fbe5ea43037d  0.5s
+ => => extracting sha256:519df5fceacdeaadeec563397b1d9f4d7c29c9f6eff87973  0.3s
+ => => extracting sha256:ccc287cbeddc96a0772397ca00ec85482a7b7f9a9fac643b  2.1s
+ => => extracting sha256:e3f8e6af58ed3a502f0c3c15dce636d9d362a742eb5b6777  5.7s
+ => => extracting sha256:aebed27b2d86a5a3a2cbe186247911047a7e432b9d17daad  0.6s
+ => => extracting sha256:cbad01103bfec4ba3b741a15d906b2e36de89ca8bf745abb  0.8s
+ => => extracting sha256:70d3792d870b650d7685514604e42116e8b0db8f50748fee  0.3s
+ => => extracting sha256:98d95f7207351c7573b8aebb6841495266a123a90efe9afe  0.5s
+ => [internal] load build context                                          1.8s
+ => => transferring context: 7.09kB                                        0.0s
+ => [linux/arm64 1/3] FROM docker.io/library/python:latest@sha256:6b726  302.3s
+ => => resolve docker.io/library/python:latest@sha256:6b72626e02dd22ca535  0.4s
+ => => sha256:24a02abdfca959ec3ce65bf7536c15ad3e511b7e59c9e9e 231B / 231B  2.1s
+ => => sha256:bfa6be59cac119bf60b50b6bdfb11f9f3bb19c149a9 2.35MB / 2.35MB  2.0s
+ => => sha256:f10ea50fcf2a0d4af1bc5a9d91f9b1428f5336697 17.31MB / 17.31MB  6.2s
+ => => sha256:b69e7bcc0bc59e0f5c70e40bc8adebeb94f60 189.34MB / 189.34MB  290.2s
+ => => sha256:6b90fa9ec81cee5d8cd91189f29ce313bda5721d4b7 6.40MB / 6.40MB  7.8s
+ => => sha256:0e7e4e85949ee45bae139f288bc1cd85a740b408 54.67MB / 54.67MB  29.3s
+ => => sha256:47ba7d1384865fdb5a3dfafbb1264e84d27ec4e80 10.87MB / 10.87MB  3.8s
+ => => sha256:fa98001816c83c32d601f854ff21729167d22053 53.61MB / 53.61MB  65.8s
+ => => sha256:3b4e49121c0cc80005dda9ec19bc412bdadef800cf7 5.14MB / 5.14MB  3.6s
+ => => extracting sha256:fa98001816c83c32d601f854ff21729167d2205310fcab15  1.2s
+ => => extracting sha256:3b4e49121c0cc80005dda9ec19bc412bdadef800cf7dc4a8  0.5s
+ => => extracting sha256:47ba7d1384865fdb5a3dfafbb1264e84d27ec4e80462b8bf  0.4s
+ => => extracting sha256:0e7e4e85949ee45bae139f288bc1cd85a740b408abdefaab  1.8s
+ => => extracting sha256:b69e7bcc0bc59e0f5c70e40bc8adebeb94f60240a71e7f8a  7.5s
+ => => extracting sha256:6b90fa9ec81cee5d8cd91189f29ce313bda5721d4b71935e  0.8s
+ => => extracting sha256:f10ea50fcf2a0d4af1bc5a9d91f9b1428f5336697c114631  2.2s
+ => => extracting sha256:24a02abdfca959ec3ce65bf7536c15ad3e511b7e59c9e9ef  0.4s
+ => => extracting sha256:bfa6be59cac119bf60b50b6bdfb11f9f3bb19c149a90b2c4  0.5s
+ => [linux/arm64 2/3] COPY . /usr/src/myapp                                1.8s
+ => [linux/arm64 3/3] WORKDIR /usr/src/myapp                               0.7s
+ => [auth] library/python:pull token for registry-1.docker.io              0.0s
+ => [linux/amd64 2/3] COPY . /usr/src/myapp                                1.2s
+ => [linux/amd64 3/3] WORKDIR /usr/src/myapp                               0.7s
+ => ERROR exporting to image                                              27.2s
+ => => exporting layers                                                   23.2s
+ => => exporting manifest sha256:146ceed009408c5a3edce671316bf284efed17ce  0.2s
+ => => exporting config sha256:d5626880fd3234f4f632ace9257b34d4ee00c948b8  0.2s
+ => => exporting manifest sha256:447ff1b6a886e1d84604cbf9e4568ab9defa384f  0.2s
+ => => exporting config sha256:e15f47524408e12d8fdb003e68be2a641192e618d5  0.2s
+ => => exporting manifest list sha256:b04694929683f30780b2ac873a0a2166b64  0.2s
+ => => pushing layers                                                      2.2s
+ => [auth] mingruoqu2/python3:pull,push token for registry-1.docker.io     0.0s
+ => [auth] mingruoqu2/python3:pull,push token for registry-1.docker.io     0.0s
+ => [auth] mingruoqu2/python3:pull,push token for registry-1.docker.io     0.0s
+ => [auth] mingruoqu2/python3:pull,push token for registry-1.docker.io     0.0s
+------
+ > exporting to image:
+------
+error: failed to solve: authorization status: 401: authorization failed
+(base) qmr@ip-10-0-101-189 cloud % docker login
+Authenticating with existing credentials...
+Login Succeeded
+(base) qmr@ip-10-0-101-189 cloud % docker image ls
+REPOSITORY                           TAG               IMAGE ID       CREATED         SIZE
+dockerhubid/imagename                latest            3d100132a98c   3 days ago      862MB
+mingruoqu/python                     latest            3d100132a98c   3 days ago      862MB
+<none>                               <none>            d6548f4441db   4 days ago      862MB
+<none>                               <none>            a3445e22a20f   4 days ago      862MB
+postgres                             latest            588250b21688   7 days ago      353MB
+postgres                             <none>            bc5d09b9811d   4 weeks ago     300MB
+moby/buildkit                        buildx-stable-1   febfa34ea4a7   2 months ago    134MB
+docker/getting-started               latest            613921574f76   3 months ago    26.7MB
+mcr.microsoft.com/mmlspark/release   latest            015f87568562   12 months ago   2.57GB
+(base) qmr@ip-10-0-101-189 cloud % docker buildx build --platform linux/amd64,linux/arm64 --push -t mingruoqu3/python4 .
+[+] Building 8.1s (18/18) FINISHED                                              
+ => [internal] load build definition from Dockerfile                       0.3s
+ => => transferring dockerfile: 459B                                       0.0s
+ => [internal] load .dockerignore                                          0.4s
+ => => transferring context: 2B                                            0.0s
+ => [linux/arm64 internal] load metadata for docker.io/library/python:lat  2.5s
+ => [linux/amd64 internal] load metadata for docker.io/library/python:lat  2.3s
+ => [linux/arm64 1/3] FROM docker.io/library/python:latest@sha256:b35af99  0.0s
+ => => resolve docker.io/library/python:latest@sha256:b35af9960cf515d9ad0  0.5s
+ => [linux/amd64 1/3] FROM docker.io/library/python:latest@sha256:b35af99  0.0s
+ => => resolve docker.io/library/python:latest@sha256:b35af9960cf515d9ad0  0.5s
+ => [internal] load build context                                          0.3s
+ => => transferring context: 811B                                          0.0s
+ => CACHED [linux/amd64 2/3] COPY . /usr/src/myapp                         0.0s
+ => CACHED [linux/amd64 3/3] WORKDIR /usr/src/myapp                        0.0s
+ => CACHED [linux/arm64 2/3] COPY . /usr/src/myapp                         0.0s
+ => CACHED [linux/arm64 3/3] WORKDIR /usr/src/myapp                        0.0s
+ => ERROR exporting to image                                               4.2s
+ => => exporting layers                                                    0.0s
+ => => exporting manifest sha256:146ceed009408c5a3edce671316bf284efed17ce  0.2s
+ => => exporting config sha256:d5626880fd3234f4f632ace9257b34d4ee00c948b8  0.2s
+ => => exporting manifest sha256:447ff1b6a886e1d84604cbf9e4568ab9defa384f  0.2s
+ => => exporting config sha256:e15f47524408e12d8fdb003e68be2a641192e618d5  0.2s
+ => => exporting manifest list sha256:b04694929683f30780b2ac873a0a2166b64  0.2s
+ => => pushing layers                                                      2.4s
+ => [auth] mingruoqu3/python4:pull,push token for registry-1.docker.io     0.0s
+ => [auth] mingruoqu3/python4:pull,push token for registry-1.docker.io     0.0s
+ => [auth] mingruoqu3/python4:pull,push token for registry-1.docker.io     0.0s
+ => [auth] mingruoqu3/python4:pull,push token for registry-1.docker.io     0.0s
+ => [auth] mingruoqu3/python4:pull,push token for registry-1.docker.io     0.0s
+ => [auth] mingruoqu3/python4:pull,push token for registry-1.docker.io     0.0s
+------
+ > exporting to image:
+------
+error: failed to solve: authorization status: 401: authorization failed
+(base) qmr@ip-10-0-101-189 cloud % docker buildx build --platform linux/amd64,linux/arm64 --push -t mingruoqu/python4 . 
+[+] Building 296.0s (14/15)                                                                                                                                                                                 
+ => [internal] load build definition from Dockerfile                                                                                                                                                   0.3s
+ => => transferring dockerfile: 459B                                                                                                                                                                   0.0s
+ => [internal] load .dockerignore                                                                                                                                                                      0.5s
+ => => transferring context: 2B                                                                                                                                                                        0.0s
+ => [linux/arm64 internal] load metadata for docker.io/library/python:latest                                                                                                                           1.6s
+ => [linux/amd64 internal] load metadata for docker.io/library/python:latest                                                                                                                           1.4s
+ => [auth] library/python:pull token for registry-1.docker.io                                                                                                                                          0.0s
+ => [linux/amd64 1/3] FROM docker.io/library/python:latest@sha256:b35af9960cf515d9ad0070a0c7981addd000298f0d39e82ea287f7060480c219                                                                     0.0s
+ => => resolve docker.io/library/python:latest@sha256:b35af9960cf515d9ad0070a0c7981addd000298f0d39e82ea287f7060480c219                                                                                 0.5s
+ => [linux/arm64 1/3] FROM docker.io/library/python:latest@sha256:b35af9960cf515d9ad0070a0c7981addd000298f0d39e82ea287f7060480c219                                                                     0.0s
+ => => resolve docker.io/library/python:latest@sha256:b35af9960cf515d9ad0070a0c7981addd000298f0d39e82ea287f7060480c219                                                                                 0.5s
+ => [internal] load build context                                                                                                                                                                      0.3s
+ => => transferring context: 811B                                                                                                                                                                      0.0s
+ => CACHED [linux/amd64 2/3] COPY . /usr/src/myapp                                                                                                                                                     0.0s
+ => CACHED [linux/amd64 3/3] WORKDIR /usr/src/myapp                                                                                                                                                    0.0s
+ => CACHED [linux/arm64 2/3] COPY . /usr/src/myapp                                                                                                                                                     0.0s
+ => CACHED [linux/arm64 3/3] WORKDIR /usr/src/myapp                                                                                                                                                    0.0s
+ => exporting to image                                                                                                                                                                               292.9s
+ => => exporting layers                                                                                                                                                                                0.0s
+ => => exporting manifest sha256:146ceed009408c5a3edce671316bf284efed17ce91f739f[+] Building 296.1s (14/15)                                                      => [linux/amd64 internal] load metadata for docker.io/library/python:lat  1.4s
+ => [auth] library/python:pull token for registry-1.docker.io              0.0sa => [linux/amd64 1/3] FROM docker.io/library/python:latest@sha256:b35af99  0.0s  => => resolve docker.io/library/python:latest@sha256:b35af9960cf515d9ad0  0.5s
+[+] Building 418.1s (16/16) FINISHED                                             => [internal] load build definition from Dockerfile                       0.3s  => => transferring dockerfile: 459B                                       0.0s
+ => [internal] load .dockerignore                                          0.5sa => => transferring context: 2B                                            0.0s  => [linux/arm64 internal] load metadata for docker.io/library/python:lat  1.6s
+ => [linux/amd64 internal] load metadata for docker.io/library/python:lat  1.4s0 => [auth] library/python:pull token for registry-1.docker.io              0.0s  => [linux/amd64 1/3] FROM docker.io/library/python:latest@sha256:b35af99  0.0s
+ => => resolve docker.io/library/python:latest@sha256:b35af9960cf515d9ad0  0.5s  => [linux/arm64 1/3] FROM docker.io/library/python:latest@sha256:b35af99  0.0s  => => resolve docker.io/library/python:latest@sha256:b35af9960cf515d9ad0  0.5s
+ => [internal] load build context                                          0.3s  => => transferring context: 811B                                          0.0s  => CACHED [linux/amd64 2/3] COPY . /usr/src/myapp                         0.0s
+ => CACHED [linux/amd64 3/3] WORKDIR /usr/src/myapp                        0.0s  => CACHED [linux/arm64 2/3] COPY . /usr/src/myapp                         0.0s  => CACHED [linux/arm64 3/3] WORKDIR /usr/src/myapp                        0.0s
+ => exporting to image                                                   415.0s 
+ => => exporting layers                                                    0.0s 
+ => => exporting manifest sha256:146ceed009408c5a3edce671316bf284efed17ce  0.2s 
+ => => exporting config sha256:d5626880fd3234f4f632ace9257b34d4ee00c948b8  0.2s 
+ => => exporting manifest sha256:447ff1b6a886e1d84604cbf9e4568ab9defa384f  0.2s 
+ => => exporting config sha256:e15f47524408e12d8fdb003e68be2a641192e618d5  0.2s
+ => => exporting manifest list sha256:b04694929683f30780b2ac873a0a2166b64  0.2s
+ => => pushing layers                                                    411.2s
+ => => pushing manifest for docker.io/mingruoqu/python4:latest@sha256:b04  2.0s
+ => [auth] mingruoqu/python4:pull,push token for registry-1.docker.io      0.0s
+ => [auth] mingruoqu/python4:pull,push token for registry-1.docker.io      0.0s
+ => [auth] mingruoqu/python4:pull,push token for registry-1.docker.io      0.0s
+(base) qmr@ip-10-0-101-189 cloud % docker run mingruoqu/python4
+Unable to find image 'mingruoqu/python4:latest' locally
+latest: Pulling from mingruoqu/python4
+fa98001816c8: Already exists 
+3b4e49121c0c: Already exists 
+47ba7d138486: Already exists 
+0e7e4e85949e: Already exists 
+b69e7bcc0bc5: Already exists 
+6b90fa9ec81c: Already exists 
+f10ea50fcf2a: Already exists 
+24a02abdfca9: Already exists 
+bfa6be59cac1: Already exists 
+bcc103ccd720: Pull complete 
+Digest: sha256:b04694929683f30780b2ac873a0a2166b64cf9e0100ae2101088c12db9eac29e
+Status: Downloaded newer image for mingruoqu/python4:latest
+Hello World
+(base) qmr@ip-10-0-101-189 cloud % 
